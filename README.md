@@ -1,31 +1,3 @@
-import { Pipe, PipeTransform } from '@angular/core';
+Absolutely, let's make it sound more personal. Here's a biography paragraph that reflects your voice:
 
-@Pipe({
-  name: 'sortByProperty'
-})
-export class SortByPropertyPipe implements PipeTransform {
-  transform(array: any[], property: string): any[] {
-    if (!Array.isArray(array)) {
-      return [];
-    }
-
-    const validItems: any[] = [];
-
-    // Filter out items where the property is missing or undefined
-    for (const item of array) {
-      if (item[property] !== undefined) {
-        validItems.push(item);
-      }
-    }
-
-    // Sort the valid items alphabetically
-    const sortedItems = validItems.sort((a, b) => {
-      const valueA = a[property].toString().toLowerCase();
-      const valueB = b[property].toString().toLowerCase();
-      return valueA.localeCompare(valueB);
-    });
-
-    // Extract and return the values of the specified property
-    return sortedItems.map(item => item[property]);
-  }
-}
+"Hey there, I'm all about that logical thinking! Solving the impossible? That's my jam. You see, I'm a die-hard Marvel movies fan – those superhero stories, they really get me going. But it's not all about capes and battles for me. I'm also a bit of a psychology and philosophy nerd. I just can't resist diving into the human mind and exploring life's deepest questions. So, if you're up for a chat about superheroes, unraveling the mysteries of the mind, or dissecting the philosophies that make us ponder, I'm your go-to person. I live for the challenge of it all!"
