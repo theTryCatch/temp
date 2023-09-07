@@ -9,8 +9,14 @@ export class SortByPropertyPipe implements PipeTransform {
       return [];
     }
 
+    const validItems: any[] = [];
+
     // Filter out items where the property is missing or undefined
-    const validItems = array.filter(item => item[property] !== undefined);
+    for (const item of array) {
+      if (item[property] !== undefined) {
+        validItems.push(item);
+      }
+    }
 
     // Sort the valid items alphabetically
     const sortedItems = validItems.sort((a, b) => {
