@@ -1,3 +1,16 @@
+Santosh is truly a rare gem within our organization. He consistently demonstrates an eagerness to embrace challenges and a deep passion for acquiring the knowledge necessary to enhance both his own skills and those of his team members. A notable example of this is his dedication to mastering PowerShell and comprehending the intricacies of the highly complex OCC Toolbox architecture. Santosh has not only grasped advanced PowerShell concepts but has also actively participated in our PowerShell training program, leveraging this knowledge to deliver solutions promptly. What's even more remarkable is that he has seamlessly integrated his CLI programs as features within OCC, showcasing his commitment and adaptability.
+
+In my role as Santosh's mentor for his project, I've had the privilege of witnessing his exceptional analytical skills and his relentless pursuit of creating software that is not only maintainable and enduring but also adheres to sound programming practices. His dedication to maintaining the scripts provided by Lakshmi has proven invaluable, ensuring that they remain compatible with the evolving PowerShell language.
+
+Santosh's commitment to our organization extends beyond the call of duty. He willingly devoted more than 8 hours on a weekday to address a mission-critical upgrade, specifically the DST checkout, displaying a profound understanding of our organizational needs.
+
+Furthermore, I have personally observed that Santosh's support extends beyond his assigned tasks. He goes out of his way to assist his team members unconditionally, actively contributing to their projects and helping them achieve their objectives. This collaborative spirit is a valuable asset to our team.
+
+In summary, Santosh's dedication, expertise, and willingness to go above and beyond make him an invaluable member of our team. His contributions have consistently exceeded expectations, and his positive impact on both our projects and team dynamics cannot be overstated.
+
+
+
+
 Santosh is undoubtedly equipped with sound technical knowledge, which has been a significant asset to our team. His expertise in areas like PowerShell, SCCM, and SQL has been instrumental in delivering successful solutions.
 
 However, it's worth mentioning that there are some areas where there may be opportunities for improvement. While Santosh's current demeanor and disposition are entirely in line with his nature, it could be beneficial if he could find moments to wear a smile more often. It's important to acknowledge that his current demeanor may be influenced by personal life experiences, which I have no right to comment on.
