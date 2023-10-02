@@ -1,62 +1,22 @@
-import { AfterViewInit, Directive, Host, Input, NgModule, Optional, OnDestroy, Inject } from '@angular/core';
-import { GridType, IGX_GRID_BASE } from 'igniteui-angular';
+**Title: Lakshmi's Outstanding Year-End Performance**
 
-@Directive({
-    // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[igxPreventDocumentScroll]'
-})
-export class IgxPreventDocumentScrollDirective implements AfterViewInit, OnDestroy {
-    private _preventScroll = true;
-    private gridBody: HTMLElement;
+In the world of technology, there are those who meet expectations, and then there are those who exceed them. Lakshmi, our hardworking professional, undoubtedly falls into the latter category. As we reflect on his year-end performance, it's abundantly clear that he has not only met but consistently surpassed every challenge thrown his way.
 
-    /**
-     *  A boolean indicating if page scroll should be prevented while mouse wheeling over the grid,
-     * when grid scroll has reached top or bottom. Defaults to true.
-     * ```html
-     * <igx-grid igxPreventDocumentScroll></igx-grid>
-     * <igx-grid [igxPreventDocumentScroll]='false'></igx-grid>
-     * ```
-     */
-    @Input('igxPreventDocumentScroll')
-    public set preventScroll(val: boolean) {
-        if (val === false) { this._preventScroll = false; }
-    }
+**1. ECR Application Success:**
+One of the standout achievements of Lakshmi this year is the ECR application. This application has not only gained a growing fan base but has also effectively addressed several long-standing issues with our original TCM application. His design approach not only brings a fresh perspective but also ensures the sustainability and longevity of the application. Lakshmi's commitment to this project is evident in his responsiveness to issues raised by users, ensuring that the application continues to thrive.
 
-    /**
-     * @hidden
-     */
-    constructor(@Host() @Optional() @Inject(IGX_GRID_BASE) private grid: GridType) {
-    }
+**2. Driving Automation:**
+Lakshmi's technical prowess extends beyond the boundaries of his immediate responsibilities. Recognizing the need for automation, he willingly stepped up to the plate when approached about automating various tasks. His contributions include providing PowerShell automations that tackled critical bugs and performance issues in a crucial script. The result? A significant reduction in execution time, from over 8 hours to just 1 hour and 30 minutes. Additionally, his innovative automation eliminated manual efforts while enhancing the hygiene of our main IM AV policies.
 
-    public ngAfterViewInit() {
-        this.gridBody = this.getGridTBody();
-        if (this._preventScroll) {
-            this.gridBody.addEventListener('wheel', this.preventDocumentScroll, { passive: false });
-        }
-    }
+**3. Ray of Hope for Automation Challenges:**
+Lakshmi has consistently proven himself to be the go-to expert when it comes to automation challenges. His deep technological knowledge, unwavering passion for learning, and approachable nature have made him a beacon of support within our team. Whether it's troubleshooting, offering guidance, or simply lending a helping hand, Lakshmi is always ready to assist.
 
-    public ngOnDestroy() {
-        this.gridBody.removeEventListener('wheel', this.preventDocumentScroll);
-    }
+In conclusion, Lakshmi's year-end performance stands as a testament to his dedication, expertise, and willingness to go above and beyond. His impact on our team and the organization as a whole cannot be overstated. We are fortunate to have such a committed and talented professional in our ranks, and we look forward to witnessing his continued growth and success in the coming year.
 
-    /**
-     * Prevents scrolling the page, when mouse wheel over the grid body.
-     */
-    private preventDocumentScroll(event) {
-        event.preventDefault();
-    }
+Lakshmi, you are an inspiration to us all, and your contributions have made a significant difference. Congratulations on a stellar year, and here's to many more achievements in the future.
 
-    private getGridTBody(): HTMLElement {
-        return this.grid.tbody.nativeElement;
-    }
-}
+**Scope for improvement section**
 
-/**
- * @hidden
- */
-@NgModule({
-    declarations: [IgxPreventDocumentScrollDirective],
-    exports: [IgxPreventDocumentScrollDirective]
-})
+Lakshmi is undeniably one of the most passionate and committed individuals I've ever had the pleasure of knowing. While it's a testament to his dedication, it's also crucial to ensure he strikes the right balance between hard work and personal well-being. It might be a sign of his immense love for programming or setting ambitious project goals.
 
-export class IgxPreventDocumentScrollModule { }
+I recommend that both Lakshmi and you take a moment for introspection. It's an opportunity to evaluate his workload and goals, ensuring they align with a sustainable and fulfilling career.
