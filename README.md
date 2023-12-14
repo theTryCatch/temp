@@ -1,1 +1,1 @@
-
+Previously, you were getting these '$null' texts for those approvers who are no longer with the firm. I've updated the code logic to handle this situation better. To simulate this, I've added some invalid names as approvers to a few squads using EUT Workbench.
