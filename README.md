@@ -1,9 +1,31 @@
-Santosh is an innovator with the hunger and caliber to address technical or process gaps. One notable instance is when he collaborated with Microsoft to resolve a patching issue on a machine, initially deemed impossible due to component store corruption. Despite Microsoft suggesting a rebuild, Santosh delved deeper, identifying additional factors influencing rebuild scenarios. His proficiently executed automation project performed extensive checkouts and aggregated rebuild decisions, applicable not only to Windows client machines but also seamlessly adaptable to Windows Servers. This automation not only achieved a remarkable 90% reduction in manual efforts but also played a crucial role in maintaining plant security and compliance.
+import { Injectable } from '@angular/core';
+import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 
-Understanding that excessive mouse clicks indicate a process ripe for automation, Santosh applied this philosophy to address the challenge of identifying repetitive offending machines during weekly patching efforts. His complete automation significantly slashed manual efforts from 5 hours a month to a mere 20 minutes, showcasing his commitment to efficiency and productivity.
+@Injectable({
+  providedIn: 'root'
+})
+export class SignalRService {
+  private hubConnection: HubConnection;
 
-Santosh's commitment extends beyond his immediate team, demonstrating a deep understanding of organizational needs. When faced with a critical outage prevention automation developed 15 years ago, written in buggy VBA and heavily reliant on Bigfix production, Santosh stepped in. In just 15 hours, he provided a working, production-grade code, allowing the team to confidently navigate the weekend and liberate themselves from Bigfix dependency.
+  constructor() {
+    this.buildConnection();
+  }
 
-Not merely seeking new automation opportunities, Santosh actively contributes to process improvements. His brownbag sessions, notably one on manual patch remediation, have earned acclaim as top-rated sessions. Furthermore, he empowers the team by providing utility sets and consistently contributes to the in-house application, OCC Toolbox. Santosh not only updates the WIKI but also integrates automation projects into the toolbox's GUI, enhancing the user experience for the EUT.
+  private buildConnection() {
+    this.hubConnection = new HubConnectionBuilder()
+      .withUrl('http://localhost:5000/messageHub') // Replace with your SignalR server URL
+      .build();
+  }
 
-Santosh's dedication to growth and adaptability is evident in his enrollment in the DO-IT 2023 PowerShell training. Demonstrating laser focus and eagerness to learn, he not only completed the training project on time but delivered production-quality code promptly. Santosh's ability to mold himself according to the team's needs underscores his rare and invaluable contribution to the organization.
+  startConnection() {
+    this.hubConnection.start()
+      .then(() => console.log('Connection started'))
+      .catch(err => console.log('Error while starting connection:', err));
+  }
+
+  onReceiveMessage(callback: (message: string) => void) {
+    this.hubConnection.on('ReceiveMessage', (message: string) => {
+      callback(message);
+    });
+  }
+}
