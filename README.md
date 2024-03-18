@@ -1,7 +1,1 @@
-Sowmya's impact on our team's tech modernization initiatives is nothing short of extraordinary. Her confidence, coupled with a "Do the Right Thing" ethos, has propelled our efforts forward, setting a standard for excellence.
 
-    Taking charge of onboarding Web APIs from webstack1 to Webstack2, Sowmya faced challenges head-on. The WS2 team's lack of .NET Core examples didn't deter her; instead, she became the catalyst for change. Sowmya not only assisted the WS2 team in creating sample examples but also extended her support through engaging jive sessions and video recordings. Her actions didn't just benefit our team; they reverberated across the Wealth Management side, solidifying her reputation as a go-to expert.
-
-Sowmya's active involvement in creating microservices from scratch in .NET Core, implementing Jenkins parameterized pipelines, and deploying via Webstack2 showcases her versatility and expertise. Her work on Nuget, live in production and steering us away from AFS, reflects her commitment to doing what's right for the long-term success of our processes.
-
-    It's not just about adopting the latest technologies; it's about doing so with precision and purpose. Sowmya's dedication to a modern observability stack at the OA stage exemplifies this commitment. In every endeavor, she demonstrates a clear "Do the Right Thing" mindset, making her an indispensable force in our team's pursuit of tech excellence.
