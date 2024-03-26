@@ -1,12 +1,7 @@
-The development of the EUT Workbench represents a strategic initiative to improve access and functionality for administering ECR approvers. Leveraging the foundation of the OCC Toolbox, I have worked diligently to complete half of the essential components of the EUT Workbench, reaching a usable state for its initial purpose. Moving forward, my focus is on completing the remaining essential proof of concepts, ultimately realizing the full potential of the EUT Workbench. By setting clear goals, prioritizing efficiency, and taking proactive steps to address access limitations, I am driving continuous improvement within our operational processes.
+Driven by a passion for teaching and a desire to innovate, I recognized the need to revamp PowerShell training with a fresh approach. Understanding the importance of tangible outcomes, I collaborated with candidates' managers to align training objectives with real-world projects. Despite the challenge of accommodating candidates with varying levels of PowerShell knowledge, I found the right balance to keep the program engaging and effective. Serving as a mentor for five candidates and managing two project mentors, I led the program with enthusiasm and dedication, ensuring that each participant gained valuable skills and experiences to apply in their roles. Through this initiative, I not only fostered individual growth but also contributed to the overall development and success of the team.
 
-
-
-
-
-
-Continual Improvement: Identifying opportunities to enhance existing systems and processes, such as transitioning from the OCC Toolbox to the web-based EUT Workbench.
-Efficiency: Working to complete essential components of the EUT Workbench project in a timely manner, focusing on making it usable for administering ECR approvers.
-Goal-Oriented: Setting clear objectives to complete essential proof of concepts (POCs) to fully realize the vision of the EUT Workbench project.
-Strategic Planning: Breaking down the project into manageable phases (half of the essential completed, with plans for the remaining half) to ensure steady progress and usability.
-Proactivity: Taking the initiative to address the need for enhanced access and functionality in day-to-day activities by developing the EUT Workbench.
+Passion for Teaching: Demonstrating a strong enthusiasm and passion for teaching, which drove the initiative to iterate PowerShell training with a fresh approach.
+Innovation: Identifying the need for a different approach to training based on past experiences, leading to the creation of a program with tangible outcomes for candidates.
+Adaptability: Tailoring the training approach to accommodate candidates with varying levels of PowerShell knowledge, ranging from 0 to 20 on a scale of 100.
+Collaboration: Working closely with nominated candidates' managers to align training objectives with real-world projects and ensure the relevance and applicability of the training program.
+Leadership: Taking on the role of mentor for five candidates and effectively managing two project mentors, demonstrating leadership and guidance throughout the program.
