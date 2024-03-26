@@ -1,8 +1,12 @@
-Upon joining the team, I recognized the potential to enhance efficiency and effectiveness by transforming the standalone utility toolbox into a web application. Through strategic planning and visionary thinking, I conducted whiteboard sessions to outline the essential components necessary for immediate benefits upon implementation. This led to the creation of the Wintools API, which served as the backbone for various projects including ECR, EUT Workbench, and EUT IMR NOMS. By taking the initiative to innovate and lead the transition to a web-based platform, I demonstrated qualities of leadership, collaboration, and a focus on efficiency, ultimately driving positive change within the team and organization.
+The development of the EUT Workbench represents a strategic initiative to improve access and functionality for administering ECR approvers. Leveraging the foundation of the OCC Toolbox, I have worked diligently to complete half of the essential components of the EUT Workbench, reaching a usable state for its initial purpose. Moving forward, my focus is on completing the remaining essential proof of concepts, ultimately realizing the full potential of the EUT Workbench. By setting clear goals, prioritizing efficiency, and taking proactive steps to address access limitations, I am driving continuous improvement within our operational processes.
 
-Innovation: Recognizing opportunities for improvement and innovation within existing systems and processes.
-Visionary Thinking: Identifying the potential benefits of transforming a standalone utility toolbox into a web application.
-Strategic Planning: Conducting whiteboard sessions to outline a clear plan for transitioning to a web-based platform while ensuring immediate benefits.
-Leadership: Taking the initiative to develop the Wintools API as the backbone for multiple projects, demonstrating leadership and proactive problem-solving.
-Collaboration: Working with the team to implement the vision and ensure the successful integration of the Wintools API into various projects.
-Efficiency: Focusing on achieving immediate benefits from the project rather than waiting for its completion, showcasing a commitment to efficiency and results-driven action.
+
+
+
+
+
+Continual Improvement: Identifying opportunities to enhance existing systems and processes, such as transitioning from the OCC Toolbox to the web-based EUT Workbench.
+Efficiency: Working to complete essential components of the EUT Workbench project in a timely manner, focusing on making it usable for administering ECR approvers.
+Goal-Oriented: Setting clear objectives to complete essential proof of concepts (POCs) to fully realize the vision of the EUT Workbench project.
+Strategic Planning: Breaking down the project into manageable phases (half of the essential completed, with plans for the remaining half) to ensure steady progress and usability.
+Proactivity: Taking the initiative to address the need for enhanced access and functionality in day-to-day activities by developing the EUT Workbench.
