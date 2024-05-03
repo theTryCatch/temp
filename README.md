@@ -1,40 +1,59 @@
-CREATE PROCEDURE ExecuteForEachValue
-    @CommaSeparatedValues VARCHAR(MAX),
-    @AnotherParam INT
-AS
-BEGIN
-    -- Declare the variables
-    DECLARE @Value NVARCHAR(MAX);
-    DECLARE @SplitValues TABLE (Value NVARCHAR(MAX));
+using System;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 
-    -- Use STRING_SPLIT function to split the input string and populate the table variable
-    INSERT INTO @SplitValues (Value)
-    SELECT value
-    FROM STRING_SPLIT(@CommaSeparatedValues, ',')
-    WHERE RTRIM(LTRIM(value)) <> ''; -- Filter out empty strings
+namespace LdapSearch.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class LdapSearchController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Search(string query)
+        {
+            if (string.IsNullOrEmpty(query))
+            {
+                return BadRequest("Query parameter is required.");
+            }
 
-    -- Declare a cursor to iterate through the values
-    DECLARE cur CURSOR LOCAL FOR
-        SELECT Value
-        FROM @SplitValues;
+            try
+            {
+                // Execute the ldapsearch command
+                var processStartInfo = new ProcessStartInfo
+                {
+                    FileName = "ldapsearch",
+                    Arguments = $"-x -b 'dc=example,dc=com' '{query}'",
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
 
-    -- Open the cursor
-    OPEN cur;
+                using (var process = Process.Start(processStartInfo))
+                {
+                    if (process == null)
+                    {
+                        return StatusCode(500, "Failed to start process.");
+                    }
 
-    -- Fetch the first row
-    FETCH NEXT FROM cur INTO @Value;
+                    // Read the output
+                    string output = process.StandardOutput.ReadToEnd();
+                    string error = process.StandardError.ReadToEnd();
 
-    -- Loop through each value
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-        -- Execute the stored procedure with the current value and another parameter
-        EXEC YourStoredProcedure @Value, @AnotherParam;
+                    process.WaitForExit();
 
-        -- Fetch the next row
-        FETCH NEXT FROM cur INTO @Value;
-    END
+                    if (!string.IsNullOrEmpty(error))
+                    {
+                        return StatusCode(500, $"Error executing ldapsearch: {error}");
+                    }
 
-    -- Close and deallocate the cursor
-    CLOSE cur;
-    DEALLOCATE cur;
-END;
+                    return Ok(output);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+    }
+}
