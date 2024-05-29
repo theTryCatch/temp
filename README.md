@@ -1,19 +1,13 @@
-Certainly! Here are quotes from the messages for each of the themes identified:
+Expertise and Knowledge:
 
-1. **Expertise and Knowledge:**
-   - "Thanks Lakshmi for always for your expertise knowledge and quick action when ever I reach out to you for ad hoc function in script you swiftly help with it." - Pradeep Kumar S
+"Thank you very much for your support by understanding my requirements and providing the script and reporting function within very challenging period, and even it was sudden request for you. The script worked perfectly and the report function was also really helpful. By using your script, we could implement the risk remediation for global IBD/ICM and also maintain Japan IBD machines who still uses Office2016 within 1 week." - Mahoko Sasaki
+Quick and Effective Problem-Solving:
 
-2. **Quick and Effective Problem-Solving:**
-   - "Just wanted to shoot you a quick thank you for swooping in and saving the day with the broken certificate RFB automation. Your programming skills are seriously top-notch, and it’s always cool how you’re ready to lend a hand. Thanks for making our lives easier." - Pradeep Kumar S
+"I want to thank Lak for the enormous effort he demonstrated in response to my request for assistance late on a Friday afternoon. It would take too long here to explain the details, so suffice it to say that I was very impressed with Lak's piercing focus and strong attention to resolving the core issue in a timely and elegant way. Leading with Exceptional Ideas is definitely a Value that Lak personifies thoroughly. Thank you!" - John Ebert
+Support and Mentorship:
 
-3. **Support and Mentorship:**
-   - "I would like to thank Lakshmi for always being the supportive mentor whenever I needed guidance. Thanks for having answers to all the questions I ask you and for being a go-to person." - Akanksha Sharma
+"I want to thank Lakshmi for his help in moving our Angular application to Webstack. He guided me whenever we were stuck. Thanks for the late evening Zoom sessions where you explained each step in detail about the missing pieces in our implementation. We have successfully onboarded our application now. Thanks a ton!" - Taresh Paul
+"I would like to thank Lakshmi for always being the supportive mentor whenever I needed guidance. Thanks for having answers to all the questions I ask you and for being a go-to person." - Akanksha Sharma
+Collaboration and Team Contribution:
 
-4. **Collaboration and Team Contribution:**
-   - "Your contributions to the team’s efforts this year have been exceptional. Your innovation and hard work are greatly appreciated, and an important factor in the team’s success. Please know that your forward thinking and creative approach to problem-solving are valued by all." - Josh Levine
-
-5. **Innovation and Creativity:**
-   - "Hi Lakshmi, Congratulations on being awarded as the 'Most Engaging Person' for Brown Bag session on 'Different Compute offerings at Morgan Stanley.' Looking forward for your contribution to help make Brown Bag sessions more interactive in the future and help deliver brown bag sessions by your team." - Sandeepan Mishra
-
-6. **Professionalism and Reliability:**
-   - "Lakshmi is extremely helpful and professional on script development. Resolved script issues for me." - Johnson Wang
+"Just wanted to thank Lakshmi for his work on the ecr-prod portal. This portal is by far a big, big improvement from the antiquated TCM portal we use for creating/updating TCMs. Good job and keep up the excellent work!!!" - Mirza Ahmed
