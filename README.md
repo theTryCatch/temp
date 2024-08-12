@@ -1,6 +1,8 @@
-index="log-55301-nonprod-c" laas_env=dev laas_file="/var/tmp/gatewayapi_dev/transaction.log" "Starting request for the user"
-| rex field=_raw "\- (?<url_path>/[^\s]+)\s+\-"
-| rex field=_raw "user:\s*(?<username>[^\s]+)"
-| rex field=_raw "(?<http_method>GET|POST|PUT|DELETE|HEAD|OPTIONS|PATCH)"
-| search url_path=*
-| table _time, username, http_method, url_path
+# Multi level nested sidebar in Angular 18!
+
+Steps to add new items to the menu
+
+1) Create a component for the specific route for the menu
+2) Add the menu item to the menuItems array in menu-items.ts file
+3) Ensure any parent components have router outlet in them - so the children can display
+4) The routes and the sidebar will be automatically generated!
