@@ -1,8 +1,16 @@
-# Multi level nested sidebar in Angular 18!
-
-Steps to add new items to the menu
-
-1) Create a component for the specific route for the menu
-2) Add the menu item to the menuItems array in menu-items.ts file
-3) Ensure any parent components have router outlet in them - so the children can display
-4) The routes and the sidebar will be automatically generated!
+<div class="w-full overflow-x-auto">
+  <table class="min-w-full border-collapse border border-gray-200">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-300 px-4 py-2 text-left">Attribute</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td class="border border-gray-300 px-4 py-2">{{ item.attribute }}</td>
+        <td class="border border-gray-300 px-4 py-2">{{ item.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
