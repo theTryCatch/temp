@@ -1,11 +1,22 @@
-<div class="bg-base-200 collapse">
-  <input type="checkbox" class="peer" />
-  <div
-    class="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-    Click me to show/hide content
+<div role="tablist" class="tabs tabs-lifted">
+  <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 1" />
+  <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+    Tab content 1
   </div>
-  <div
-    class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-    <p>hello</p>
+
+  <input
+    type="radio"
+    name="my_tabs_2"
+    role="tab"
+    class="tab"
+    aria-label="Tab 2"
+    checked="checked" />
+  <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+    Tab content 2
+  </div>
+
+  <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 3" />
+  <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+    Tab content 3
   </div>
 </div>
