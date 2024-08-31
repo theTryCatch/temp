@@ -1,162 +1,121 @@
-<div class="h-96 overflow-x-auto">
-  <table class="table table-pin-rows">
-    <thead>
-      <tr>
-        <th>A</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Ant-Man</td></tr>
-      <tr><td>Aquaman</td></tr>
-      <tr><td>Asterix</td></tr>
-      <tr><td>The Atom</td></tr>
-      <tr><td>The Avengers</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>B</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Batgirl</td></tr>
-      <tr><td>Batman</td></tr>
-      <tr><td>Batwoman</td></tr>
-      <tr><td>Black Canary</td></tr>
-      <tr><td>Black Panther</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>C</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Captain America</td></tr>
-      <tr><td>Captain Marvel</td></tr>
-      <tr><td>Catwoman</td></tr>
-      <tr><td>Conan the Barbarian</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>D</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Daredevil</td></tr>
-      <tr><td>The Defenders</td></tr>
-      <tr><td>Doc Savage</td></tr>
-      <tr><td>Doctor Strange</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>E</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Elektra</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>F</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Fantastic Four</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>G</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Ghost Rider</td></tr>
-      <tr><td>Green Arrow</td></tr>
-      <tr><td>Green Lantern</td></tr>
-      <tr><td>Guardians of the Galaxy</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>H</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Hawkeye</td></tr>
-      <tr><td>Hellboy</td></tr>
-      <tr><td>Incredible Hulk</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>I</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Iron Fist</td></tr>
-      <tr><td>Iron Man</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>M</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Marvelman</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>R</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Robin</td></tr>
-      <tr><td>The Rocketeer</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>S</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>The Shadow</td></tr>
-      <tr><td>Spider-Man</td></tr>
-      <tr><td>Sub-Mariner</td></tr>
-      <tr><td>Supergirl</td></tr>
-      <tr><td>Superman</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>T</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Teenage Mutant Ninja Turtles</td></tr>
-      <tr><td>Thor</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>W</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>The Wasp</td></tr>
-      <tr><td>Watchmen</td></tr>
-      <tr><td>Wolverine</td></tr>
-      <tr><td>Wonder Woman</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>X</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>X-Men</td></tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th>Z</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Zatanna</td></tr>
-      <tr><td>Zatara</td></tr>
-    </tbody>
-  </table>
-</div>
+<ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+  <li>
+    <div class="timeline-middle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="h-5 w-5">
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="timeline-start mb-10 md:text-end">
+      <time class="font-mono italic">1984</time>
+      <div class="text-lg font-black">First Macintosh computer</div>
+      The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
+      personal computer. It played a pivotal role in establishing desktop publishing as a general
+      office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
+      in a beige case with integrated carrying handle; it came with a keyboard and single-button
+      mouse.
+    </div>
+    <hr />
+  </li>
+  <li>
+    <hr />
+    <div class="timeline-middle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="h-5 w-5">
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="timeline-end mb-10">
+      <time class="font-mono italic">1998</time>
+      <div class="text-lg font-black">iMac</div>
+      iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has
+      been the primary part of Apple's consumer desktop offerings since its debut in August 1998,
+      and has evolved through seven distinct forms
+    </div>
+    <hr />
+  </li>
+  <li>
+    <hr />
+    <div class="timeline-middle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="h-5 w-5">
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="timeline-start mb-10 md:text-end">
+      <time class="font-mono italic">2001</time>
+      <div class="text-lg font-black">iPod</div>
+      The iPod is a discontinued series of portable media players and multi-purpose mobile devices
+      designed and marketed by Apple Inc. The first version was released on October 23, 2001, about
+      8+1⁄2 months after the Macintosh version of iTunes was released. Apple sold an estimated 450
+      million iPod products as of 2022. Apple discontinued the iPod product line on May 10, 2022. At
+      over 20 years, the iPod brand is the oldest to be discontinued by Apple
+    </div>
+    <hr />
+  </li>
+  <li>
+    <hr />
+    <div class="timeline-middle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="h-5 w-5">
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="timeline-end mb-10">
+      <time class="font-mono italic">2007</time>
+      <div class="text-lg font-black">iPhone</div>
+      iPhone is a line of smartphones produced by Apple Inc. that use Apple's own iOS mobile
+      operating system. The first-generation iPhone was announced by then-Apple CEO Steve Jobs on
+      January 9, 2007. Since then, Apple has annually released new iPhone models and iOS updates. As
+      of November 1, 2018, more than 2.2 billion iPhones had been sold. As of 2022, the iPhone
+      accounts for 15.6% of global smartphone market share
+    </div>
+    <hr />
+  </li>
+  <li>
+    <hr />
+    <div class="timeline-middle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="h-5 w-5">
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <div class="timeline-start mb-10 md:text-end">
+      <time class="font-mono italic">2015</time>
+      <div class="text-lg font-black">Apple Watch</div>
+      The Apple Watch is a line of smartwatches produced by Apple Inc. It incorporates fitness
+      tracking, health-oriented capabilities, and wireless telecommunication, and integrates with
+      iOS and other Apple products and services
+    </div>
+  </li>
+</ul>
