@@ -429,3 +429,37 @@ export class UtilityTableComponent implements OnInit {
     this.applyFilter();
   }
 }
+---------------
+function sortArrayByReference(array1, array2) {
+    // Check if all elements of array2 are in array1
+    for (const element of array2) {
+        if (!array1.includes(element)) {
+            throw new Error(`Element "${element}" from array2 is not found in array1`);
+        }
+    }
+
+    // Sorting array1 based on the order defined by array2
+    const sortedArray = array1.sort((a, b) => {
+        const indexA = array2.indexOf(a);
+        const indexB = array2.indexOf(b);
+
+        // Sort elements found in array2 according to their order in array2
+        if (indexA !== -1 && indexB !== -1) {
+            return indexA - indexB;
+        }
+
+        // If one element is found in array2, it should come first
+        if (indexA !== -1) {
+            return -1;
+        }
+
+        if (indexB !== -1) {
+            return 1;
+        }
+
+        // Maintain original order if neither element is found in array2
+        return 0;
+    });
+
+    return sortedArray;
+}
