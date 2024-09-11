@@ -792,3 +792,18 @@ export class TypeaheadComponent implements OnChanges {
     this.highlightedIndex = -1;
   }
 }
+
+
+-------------
+SELECT 
+    OBJECT_SCHEMA_NAME(object_id) AS [Schema], 
+    OBJECT_NAME(object_id) AS [ObjectName], 
+    type_desc AS [ObjectType]
+FROM 
+    sys.objects
+JOIN 
+    sys.sql_modules ON sys.objects.object_id = sys.sql_modules.object_id
+WHERE 
+    sys.sql_modules.definition LIKE '%wintoolsapi%'
+ORDER BY 
+    [Schema], [ObjectName];
