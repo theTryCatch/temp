@@ -796,14 +796,14 @@ export class TypeaheadComponent implements OnChanges {
 
 -------------
 SELECT 
-    OBJECT_SCHEMA_NAME(object_id) AS [Schema], 
-    OBJECT_NAME(object_id) AS [ObjectName], 
-    type_desc AS [ObjectType]
+    OBJECT_SCHEMA_NAME(o.object_id) AS [Schema], 
+    OBJECT_NAME(o.object_id) AS [ObjectName], 
+    o.type_desc AS [ObjectType]
 FROM 
-    sys.objects
+    sys.objects o
 JOIN 
-    sys.sql_modules ON sys.objects.object_id = sys.sql_modules.object_id
+    sys.sql_modules m ON o.object_id = m.object_id
 WHERE 
-    sys.sql_modules.definition LIKE '%wintoolsapi%'
+    m.definition LIKE '%wintoolsapi%'
 ORDER BY 
     [Schema], [ObjectName];
