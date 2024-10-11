@@ -722,3 +722,201 @@ Reserved actions are specific predefined actions the workflow can take under cer
   ]
 }
 ```
+-------------------------------------------------------------------------------------------------
+{
+  "name": "ClearTeamsClientCache",
+  "workflowOwningGroup": "ITSupport",
+  "emailAddress": "support@example.com",
+  "globals": {
+    "teamsAppDataPath": "%APPDATA%\\Microsoft\\Teams",
+    "teamsProcessName": "Teams.exe",
+    "pathToTeamsExe": "%LOCALAPPDATA%\\Microsoft\\Teams\\Update.exe --processStart Teams.exe",
+    "maxRetryAttempts": 2,
+    "retryDelaySeconds": 5
+  },
+  "description": "A workflow to clear the Microsoft Teams client cache in multiple steps.",
+  "steps": [
+    {
+      "name": "CheckServiceRunning",
+      "description": "Check if Microsoft Teams is running.",
+      "executionType": "sequential",
+      "environment": {
+        "commandType": "script",
+        "runtime": "PowerShell",
+        "command": "check_service_running.ps1",
+        "params": {
+          "serviceName": "{{globals.teamsProcessName}}"
+        }
+      },
+      "timeout": 60,
+      "outputVariable": "isServiceRunning",
+      "successCriteria": "isServiceRunning -eq true",
+      "onSuccessSequential": {
+        "actionType": "WorkflowStep",
+        "trigger": "StopService"
+      },
+      "onUnsuccessSequential": {
+        "actionType": "WorkflowStep",
+        "trigger": "NotifyFailure"
+      },
+      "onError": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Service check failed."
+      },
+      "onTimeout": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Service check timed out, aborting workflow."
+      },
+      "wikiLink": "https://wiki.example.com/check_service_running",
+      "versionRange": {
+        "lowestVersion": "1.0.0",
+        "highestVersion": "3.0.0"
+      }
+    },
+    {
+      "name": "StopService",
+      "description": "Stop the Microsoft Teams service.",
+      "executionType": "sequential",
+      "environment": {
+        "commandType": "script",
+        "runtime": "Bash",
+        "command": "stop_service.sh",
+        "params": {
+          "serviceName": "{{globals.teamsProcessName}}"
+        }
+      },
+      "outputVariable": "isServiceStopped",
+      "successCriteria": "isServiceStopped -eq true",
+      "onSuccessSequential": {
+        "actionType": "WorkflowStep",
+        "trigger": "ClearCache"
+      },
+      "onUnsuccessSequential": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Failed to stop service."
+      },
+      "onTimeout": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Service stop timed out, aborting workflow."
+      },
+      "wikiLink": "https://wiki.example.com/stop_service",
+      "versionRange": {
+        "lowestVersion": "1.0.0",
+        "highestVersion": "3.0.0"
+      }
+    },
+    {
+      "name": "ClearCache",
+      "description": "Clear the Teams cache by deleting specific cache folders and files.",
+      "executionType": "sequential",
+      "environment": {
+        "commandType": "script",
+        "runtime": "PowerShell",
+        "command": "clear_cache.ps1",
+        "params": {
+          "cachePath": "{{globals.teamsAppDataPath}}"
+        }
+      },
+      "outputVariable": "cacheCleared",
+      "successCriteria": "cacheCleared -eq true",
+      "onSuccessSequential": {
+        "actionType": "WorkflowStep",
+        "trigger": "RestartService"
+      },
+      "onUnsuccessSequential": {
+        "actionType": "ReservedAction",
+        "trigger": "EndWorkflow",
+        "inputValue": "Cache clearing unsuccessful, ending workflow."
+      },
+      "onScriptExecutionError": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Failed to clear Teams cache. Aborting workflow."
+      },
+      "onTimeout": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Cache clearing timed out, aborting workflow."
+      },
+      "wikiLink": "https://wiki.example.com/clear_cache",
+      "versionRange": {
+        "lowestVersion": "1.0.0",
+        "highestVersion": "3.0.0"
+      }
+    },
+    {
+      "name": "RestartService",
+      "description": "Restart Microsoft Teams after clearing the cache.",
+      "executionType": "sequential",
+      "environment": {
+        "commandType": "script",
+        "runtime": "Python",
+        "command": "restart_service.py",
+        "params": {
+          "serviceName": "{{globals.teamsProcessName}}",
+          "pathToTeams": "{{globals.pathToTeamsExe}}"
+        }
+      },
+      "outputVariable": "isServiceRunning",
+      "successCriteria": "isServiceRunning -eq true",
+      "onSuccessSequential": {
+        "actionType": "WorkflowStep",
+        "trigger": "NotifySuccess"
+      },
+      "onUnsuccessSequential": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Service restart failed, aborting workflow."
+      },
+      "onTimeout": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Service restart timed out, aborting workflow."
+      },
+      "wikiLink": "https://wiki.example.com/restart_service",
+      "versionRange": {
+        "lowestVersion": "1.0.0",
+        "highestVersion": "3.0.0"
+      }
+    },
+    {
+      "name": "NotifySuccess",
+      "description": "Notify the user that the operation has been completed successfully.",
+      "executionType": "sequential",
+      "environment": {
+        "commandType": "serviceCall",
+        "serviceEndpoint": "https://notify.example.com/success",
+        "method": "POST",
+        "params": {
+          "message": "Microsoft Teams cache has been cleared successfully and Teams has been restarted."
+        }
+      },
+      "outputVariable": "notificationSent",
+      "successCriteria": "notificationSent -eq true",
+      "onSuccessSequential": {
+        "actionType": "ReservedAction",
+        "trigger": "EndWorkflow",
+        "inputValue": "Workflow completed successfully."
+      },
+      "onUnsuccessSequential": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Notification failed, aborting workflow."
+      },
+      "onTimeout": {
+        "actionType": "ReservedAction",
+        "trigger": "AbortWorkflow",
+        "inputValue": "Notification process timed out, aborting workflow."
+      },
+      "wikiLink": "https://wiki.example.com/notify_success",
+      "versionRange": {
+        "lowestVersion": "1.0.0",
+        "highestVersion": "3.0.0"
+      }
+    }
+  ]
+}
