@@ -723,6 +723,41 @@ Reserved actions are specific predefined actions the workflow can take under cer
 }
 ```
 -------------------------------------------------------------------------------------------------
+# Workflow Documentation Table
+
+| **Name**                | **Description**                                                                                      | **Datatype**         | **Values**                                                      | **Example**                                                     |
+|-------------------------|------------------------------------------------------------------------------------------------------|----------------------|-----------------------------------------------------------------|-----------------------------------------------------------------|
+| `name`                  | The name of the workflow or step.                                                                    | `string`             | Any valid string                                                 | `"ClearTeamsClientCache"`                                        |
+| `workflowOwningGroup`    | The group responsible for managing this workflow.                                                    | `string`             | Any valid string                                                 | `"ITSupport"`                                                   |
+| `emailAddress`          | Contact email for notifications or support.                                                          | `string`             | Valid email addresses                                            | `"support@example.com"`                                         |
+| `globals`               | Global variables used throughout the workflow.                                                       | `object`             | Any valid key-value pair                                         | `{ "teamsAppDataPath": "%APPDATA%\\Microsoft\\Teams" }`         |
+| `description`           | A brief description of the workflow or step.                                                         | `string`             | Any valid string                                                 | `"A workflow to clear the Microsoft Teams client cache."`       |
+| `steps`                 | A list of steps that comprise the workflow.                                                          | `array of objects`    | Each step is an object with its own properties (see below)       | See steps example in the full JSON above                        |
+| `executionType`         | Defines whether the step should be executed sequentially or in parallel.                             | `string`             | `"sequential"`, `"parallel"`                                     | `"sequential"`                                                  |
+| `environment.commandType`| The type of execution environment for this step.                                                     | `string`             | `"script"`, `"serviceCall"`, etc.                                | `"script"`                                                      |
+| `environment.runtime`    | Specifies the runtime environment used to execute the command.                                      | `string`             | `"PowerShell"`, `"Bash"`, `"Python"`                             | `"PowerShell"`                                                  |
+| `environment.command`    | The command or script to be executed in the step.                                                   | `string`             | Any valid script or command                                      | `"clear_cache.ps1"`                                             |
+| `environment.params`     | Parameters passed to the command or script.                                                         | `object`             | Key-value pairs representing the parameters                      | `{ "serviceName": "Teams.exe" }`                                |
+| `outputVariable`         | The name of the variable that holds the result of the command.                                       | `string`             | Any valid string                                                 | `"isServiceRunning"`                                            |
+| `successCriteria`        | The condition used to evaluate whether the step was successful.                                      | `string`             | Any valid condition or expression                                | `"isServiceRunning -eq true"`                                   |
+| `timeout`               | Time in seconds after which the step should be considered as timed out.                              | `number`             | Positive integer values                                          | `60`                                                            |
+| `onSuccessSequential`    | Defines the action to take if the step is successful (sequential execution).                         | `object`             | `"WorkflowStep"`, `"ReservedAction"`                             | `{ "actionType": "WorkflowStep", "trigger": "ClearCache" }`     |
+| `onUnsuccessSequential`  | Defines the action to take if the step fails (sequential execution).                                 | `object`             | `"WorkflowStep"`, `"ReservedAction"`                             | `{ "actionType": "ReservedAction", "trigger": "AbortWorkflow" }`|
+| `onError`               | Defines the action to take if an error occurs during execution.                                      | `object`             | `"WorkflowStep"`, `"ReservedAction"`                             | `{ "actionType": "ReservedAction", "trigger": "AbortWorkflow" }`|
+| `onTimeout`             | Defines the action to take if the step times out.                                                    | `object`             | `"WorkflowStep"`, `"ReservedAction"`                             | `{ "actionType": "ReservedAction", "trigger": "AbortWorkflow" }`|
+| `inputValue`            | Custom input for reserved actions, such as a message or complex object.                              | `string`/`object`     | Any string or complex object                                     | `"Service check timed out, aborting workflow."`                 |
+| `wikiLink`              | Link to documentation or wiki page that explains the step.                                           | `string`             | Valid URLs                                                       | `"https://wiki.example.com/check_service_running"`              |
+| `versionRange.lowestVersion` | Minimum version of the workflow in which this step can be used.                                   | `string`             | Valid version strings                                            | `"1.0.0"`                                                       |
+| `versionRange.highestVersion` | Maximum version of the workflow in which this step can be used.                                   | `string`             | Valid version strings                                            | `"3.0.0"`                                                       |
+
+### Example Explanation:
+
+- **`name`**: For steps, this can be something like `"CheckServiceRunning"`. For the workflow, it can be `"ClearTeamsClientCache"`.
+- **`description`**: Describes the purpose of each step, such as `"Check if Microsoft Teams is running."`.
+- **`executionType`**: Determines if steps are executed one after the other (`"sequential"`) or at the same time (`"parallel"`).
+- **`timeout`**: Specifies the maximum allowed time for each step in seconds, e.g., `60`.
+
+
 {
   "name": "ClearTeamsClientCache",
   "workflowOwningGroup": "ITSupport",
@@ -748,9 +783,9 @@ Reserved actions are specific predefined actions the workflow can take under cer
           "serviceName": "{{globals.teamsProcessName}}"
         }
       },
-      "timeout": 60,
       "outputVariable": "isServiceRunning",
       "successCriteria": "isServiceRunning -eq true",
+      "timeout": 60,
       "onSuccessSequential": {
         "actionType": "WorkflowStep",
         "trigger": "StopService"
@@ -789,6 +824,7 @@ Reserved actions are specific predefined actions the workflow can take under cer
       },
       "outputVariable": "isServiceStopped",
       "successCriteria": "isServiceStopped -eq true",
+      "timeout": 120,
       "onSuccessSequential": {
         "actionType": "WorkflowStep",
         "trigger": "ClearCache"
@@ -823,6 +859,7 @@ Reserved actions are specific predefined actions the workflow can take under cer
       },
       "outputVariable": "cacheCleared",
       "successCriteria": "cacheCleared -eq true",
+      "timeout": 180,
       "onSuccessSequential": {
         "actionType": "WorkflowStep",
         "trigger": "RestartService"
@@ -863,6 +900,7 @@ Reserved actions are specific predefined actions the workflow can take under cer
       },
       "outputVariable": "isServiceRunning",
       "successCriteria": "isServiceRunning -eq true",
+      "timeout": 120,
       "onSuccessSequential": {
         "actionType": "WorkflowStep",
         "trigger": "NotifySuccess"
@@ -897,6 +935,7 @@ Reserved actions are specific predefined actions the workflow can take under cer
       },
       "outputVariable": "notificationSent",
       "successCriteria": "notificationSent -eq true",
+      "timeout": 60,
       "onSuccessSequential": {
         "actionType": "ReservedAction",
         "trigger": "EndWorkflow",
@@ -920,3 +959,4 @@ Reserved actions are specific predefined actions the workflow can take under cer
     }
   ]
 }
+
