@@ -960,3 +960,33 @@ Reserved actions are specific predefined actions the workflow can take under cer
   ]
 }
 
+| **Name**                | **Description**                                                                                      | **Datatype**         | **Values**                                                      | **Example**                                                     |
+|-------------------------|------------------------------------------------------------------------------------------------------|----------------------|-----------------------------------------------------------------|-----------------------------------------------------------------|
+| `onSuccessSequential`    | Defines the action to take if the step is successful when executed sequentially.                     | `object`             | Contains `actionType` and `trigger`                              | `{ "actionType": "WorkflowStep", "trigger": "ClearCache" }`     |
+| `onUnsuccessSequential`  | Defines the action to take if the step fails when executed sequentially.                             | `object`             | Contains `actionType` and `trigger`                              | `{ "actionType": "ReservedAction", "trigger": "AbortWorkflow" }`|
+| `onError`               | Defines the action to take if an error occurs during execution of the step.                           | `object`             | Contains `actionType` and `trigger`                              | `{ "actionType": "ReservedAction", "trigger": "AbortWorkflow" }`|
+| `onTimeout`             | Defines the action to take if the step times out.                                                    | `object`             | Contains `actionType` and `trigger`                              | `{ "actionType": "ReservedAction", "trigger": "AbortWorkflow" }`|
+| `actionType`            | Defines the type of action to execute.                                                               | `string`             | `"WorkflowStep"` or `"ReservedAction"`                           | `"WorkflowStep"`                                                |
+| `trigger`               | Defines the next step or reserved action to trigger based on the result of the current step.          | `string`             | Workflow step name or reserved action like `"AbortWorkflow"`, `"EndWorkflow"` | `"ClearCache"`, `"AbortWorkflow"`                               |
+
+### Explanation of Each Property:
+
+- **`onSuccessSequential`**: Specifies the action to take when the step completes successfully in a sequential execution. It consists of:
+  - **`actionType`**: Defines the type of action, such as `"WorkflowStep"` for triggering another step or `"ReservedAction"` for special actions like aborting the workflow.
+  - **`trigger`**: Specifies the next step to execute or reserved action to trigger, such as `"ClearCache"` or `"EndWorkflow"`.
+  
+- **`onUnsuccessSequential`**: Specifies the action to take when the step fails during sequential execution. It also consists of:
+  - **`actionType`**: Can be `"WorkflowStep"` or `"ReservedAction"`.
+  - **`trigger`**: Specifies the next action to take, such as `"AbortWorkflow"`.
+
+- **`onError`**: Defines what happens when an error occurs during step execution. Similar to other properties, it consists of:
+  - **`actionType`**: Can be `"ReservedAction"` for handling errors.
+  - **`trigger`**: The action to trigger, such as `"AbortWorkflow"`.
+
+- **`onTimeout`**: Specifies the action to take if the step exceeds its specified timeout. It includes:
+  - **`actionType`**: Can be `"WorkflowStep"` or `"ReservedAction"`.
+  - **`trigger`**: Defines what happens when the timeout occurs, such as `"AbortWorkflow"`.
+
+- **`actionType`**: This property determines whether the next action is a normal workflow step (`"WorkflowStep"`) or a special action (`"ReservedAction"`).
+
+- **`trigger`**: This property specifies what to do next based on the outcome of the current step. It can refer to another workflow step or trigger a reserved action like `"AbortWorkflow"`.
